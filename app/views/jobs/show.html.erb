@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% flash.each do |key, text|  %>
+	<p class="<%=key%>"><%= text %></p>
+<% end %>
 
 <h1>
 	<%= job_title @job %>
@@ -6,14 +8,15 @@
 
 <%= simple_format @job.description %>
 
-<p>
+<p> 
 	<%= pluralize(@job.comments.size, "comment") %>
 	<%= link_to 'Edit', edit_job_path(@job) %> |
 	<%= link_to 'Back', jobs_path %>
 
 </p>
 
-
+<h2>Mandar novo comentario </h2>
+<%= render "comments/form" %>
 
 <h2>Comments </h2>
 <%= render @job.comments %>
