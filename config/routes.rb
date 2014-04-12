@@ -5,6 +5,8 @@ JobBoard::Application.routes.draw do
     post "comments", to: "comments#create"
   end 
 
+  delete "comments/:id", to: "comments#destroy" , as: :comment
+
   get "hello/world"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

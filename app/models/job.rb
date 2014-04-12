@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
 
-
+scope :mais_recente, order("created_at DESC")
 
 has_many :comments
 private
